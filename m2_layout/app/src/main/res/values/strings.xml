@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">m2_layout</string>
+    <string name="text1">Верхняя строчка</string>
+    <string name="text2">Нижняя строчка</string>
+    <string name="text1_code">Верхняя строчка из кода</string>
+    <string name="text2_code">Нижняя строчка из кода</string>
+</resources>
