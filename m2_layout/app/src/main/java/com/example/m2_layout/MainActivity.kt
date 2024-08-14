@@ -21,8 +21,9 @@ class MainActivity : ComponentActivity() {
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.text1.text = getText(R.string.text1_code);
-        binding.text2.text = getText(R.string.text2_code);
+        binding.myCustomView1.setTopText(R.string.text1_code.toString());
+        binding.myCustomView1.setBottomText(R.string.text2_code.toString());
+
 
 
     }
