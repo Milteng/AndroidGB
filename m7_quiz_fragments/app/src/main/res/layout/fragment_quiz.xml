@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizFragment">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/questions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/s_build_quiz"
+        android:fontFamily="@font/opensans_bold"
+        android:textSize="22sp"/>
+
+    <ScrollView
+        android:id="@+id/questions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintBottom_toTopOf="@id/button">
+
+        <LinearLayout
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/s_question_1"/>
+            <RadioGroup
+                android:id="@+id/question1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/answer_1_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s_answer_to_1_1" />
+                <RadioButton
+                    android:id="@+id/answer_1_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s_answer_to_1_2" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/s_question_2"/>
+            <RadioGroup
+                android:id="@+id/question2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/answer_2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s_answer_to_2_1" />
+                <RadioButton
+                    android:id="@+id/answer_2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s_answer_to_2_2" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/s_question_3"/>
+            <RadioGroup
+                android:id="@+id/question3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/answer_3_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s_answer_to_3_1" />
+                <RadioButton
+                    android:id="@+id/answer_3_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/s_answer_to_3_2" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/button_quiz_text"
+        app:layout_constraintTop_toBottomOf="@id/questions"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
