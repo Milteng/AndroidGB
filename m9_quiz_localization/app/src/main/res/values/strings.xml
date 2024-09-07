@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Construction quiz</string>
+    <string name="welcome_text">Quiz</string>
+    <string name="s_continue">Continue</string>
+    <string name="s_begin">Begin</string>
+    <string name="s_build_quiz">Construction Quiz</string>
+    <string name="s_question_1">Minimum grade of concrete for construction</string>
+    <string name="s_answer_to_1_1">B10</string>
+    <string name="s_answer_to_1_2">B15</string>
+    <string name="s_question_2">The length of the beam recommended in reinforced concrete structures</string>
+    <string name="s_answer_to_2_1">2 m</string>
+    <string name="s_answer_to_2_2">3 m</string>
+    <string name="s_question_3">Recommended shal of wooden floor beams</string>
+    <string name="s_answer_to_3_1">80 sm</string>
+    <string name="s_answer_to_3_2">60 sm</string>
+    <string name="button_welcome_text">Begin</string>
+    <string name="button_quiz_text">Send</string>
+    <string name="button_result_text">Start over</string>
+    <string name="result_title">Your result:</string>
+    <string name="button_input_bd_text">Enter your date of birth</string>
+    <string name="date_dialoge_text">Choose your date of birth</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

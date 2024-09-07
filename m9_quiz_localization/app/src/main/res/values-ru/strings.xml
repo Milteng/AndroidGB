@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Construction quiz</string>
+    <string name="welcome_text">Викторина</string>
+    <string name="s_continue">Продолжить</string>
+    <string name="s_begin">Начать</string>
+    <string name="s_build_quiz">Викторина по строительству</string>
+    <string name="s_question_1">Минимальная марка бетона для строительства</string>
+    <string name="s_answer_to_1_1">B10</string>
+    <string name="s_answer_to_1_2">B15</string>
+    <string name="s_question_2">Длина балки рекомендуемая в жб конструкциях</string>
+    <string name="s_answer_to_2_1">2 м</string>
+    <string name="s_answer_to_2_2">3 м</string>
+    <string name="s_question_3">Рекомендуемый шал деревянных балок перекрытия</string>
+    <string name="s_answer_to_3_1">80 см</string>
+    <string name="s_answer_to_3_2">60 см</string>
+    <string name="button_welcome_text">Начать</string>
+    <string name="button_quiz_text">Отправить</string>
+    <string name="button_result_text">Начать заново</string>
+    <string name="result_title">Ваш результат:</string>
+    <string name="button_input_bd_text">Введите дату рождения</string>
+    <string name="date_dialoge_text">Выберете дату рождения</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
