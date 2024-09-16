@@ -10,7 +10,9 @@ import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.example.m12_mvvm.MainViewModelFactory
 import com.example.m12_mvvm.R
 import com.example.m12_mvvm.State
@@ -23,15 +25,24 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var binding: FragmentMainBinding
+    private var _binding: FragmentMainBinding? = null
+    private val binding: FragmentMainBinding
+        get() = _binding!!
+
+
     private val viewModel: MainViewModel by viewModels { MainViewModelFactory() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,10 +52,11 @@ class MainFragment : Fragment() {
         val text_view = binding.textView
         val progressBar = binding.progressBar
 
-        viewModel.InitContext(requireContext())
+        //viewModel.InitContext(requireContext())
 
         searchField.doOnTextChanged { text, _, _, _ ->
-            viewModel.onEditTextChanged(text?.length!!)
+            if (text != null)
+                 viewModel.onEditTextChanged(text?.length!!)
         }
 
         searchButton.setOnClickListener {
@@ -65,8 +77,8 @@ class MainFragment : Fragment() {
                         progressBar.isVisible = true
                     }
                     is State.Finish -> {
-                        //val searchResult = getString(R.string.search_result, state.searchText)
-                        //text_view.text = searchResult
+                        val searchResult = getString(R.string.search_result, state.searchText)
+                        text_view.text = searchResult
                         progressBar.isVisible = false
                         searchButton.isEnabled = false
 
@@ -75,20 +87,34 @@ class MainFragment : Fragment() {
             }
         }
 
+        initShowMsgText()
+        initEnabledButton()
 
+
+
+
+
+
+    }
+
+    private fun initEnabledButton() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.buttonVisibility.collect { buttonIsEnabled ->
-                searchButton.isEnabled = buttonIsEnabled
+                binding.searchButton.isEnabled = buttonIsEnabled
             }
         }
+    }
+
+    private fun initShowMsgText(){
 
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.sendMessageText.collect {msgText->
-                text_view.text = msgText
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.sendMessageText.collect { msgText ->
+                    binding.textView.text = msgText
+                }
             }
 
         }
-
     }
 
     fun View.hideKeyboard() {

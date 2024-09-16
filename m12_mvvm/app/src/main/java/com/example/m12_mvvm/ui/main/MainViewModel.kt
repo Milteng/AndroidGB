@@ -27,9 +27,9 @@ class MainViewModel(
     private val _sendMessageText = Channel<String>()
     val sendMessageText = _sendMessageText.receiveAsFlow()
 
-    fun InitContext(context : Context){
+    /*fun InitContext(context : Context){
         this.context = context;
-    }
+    }*/
 
 
 
@@ -46,9 +46,9 @@ class MainViewModel(
             _state.value = State.Loading
             val result = repository.search(searchText)
             _state.value = State.Finish(result)
-            viewModelScope.launch {
+            /*viewModelScope.launch {
                   _sendMessageText.send(context.resources.getString(R.string.search_result, searchText))
-           }
+           }*/
         }
     }
 }
