@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">m12_mvvm</string>
+    <string name="search_query">Поисковый запрос</string>
+    <string name="button_find">Найти</string>
+    <string name="result_default">Здесь будет отображаться результат запроса</string>
+    <string name="result_fake">По запросу """!query!""" ничего не найдено</string>
+    <string name="query_is_incorrect">Слишком короткий или пустой запрос</string>
+</resources>
